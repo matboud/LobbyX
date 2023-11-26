@@ -5,6 +5,7 @@ import com.lobbyx.lobbyx.backend.dtos.SuggestionDTO;
 import com.lobbyx.lobbyx.backend.entities.Game;
 import com.lobbyx.lobbyx.backend.repositories.GameRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,10 +33,19 @@ public class GamesController {
     @GetMapping("/search/byid/{id}")
     public ResponseEntity<GameDto> searchById(@PathVariable Integer id){
         Optional<Game> gameOptional = gameRepository.findById(id);
-        if(gameOptional.isEmpty())
+        if (gameOptional.isEmpty())
             return (ResponseEntity<GameDto>) ResponseEntity.status(404);
-        Game game = gameOptional.get();
-        GameDto gameDto = new GameDto(
+        return ResponseEntity.ok(gameToGameDTO(gameOptional.get()));
+    }
+
+    @GetMapping("/all/{page}/{size}")
+    ResponseEntity<List<GameDto>> getAll(@PathVariable Integer page, @PathVariable Integer size) {
+        List<GameDto> gameDtos = gameRepository.findAll(PageRequest.of(page, size)).map(this::gameToGameDTO).toList();
+        return ResponseEntity.ok(gameDtos);
+    }
+
+    GameDto gameToGameDTO(Game game) {
+        return new GameDto(
                 game.getId(),
                 game.getServerGameId(),
                 game.getExtearnalGameId(),
@@ -55,10 +65,5 @@ public class GamesController {
                 game.getGameSkinId(),
                 game.getBackground()
         );
-        return ResponseEntity.ok(gameDto);
-    }
-    @GetMapping("/all/{page}/{size}")
-    ResponseEntity<List<GameDto>> getAll(@PathVariable Integer page, @PathVariable Integer size){
-        return null;
     }
 }
