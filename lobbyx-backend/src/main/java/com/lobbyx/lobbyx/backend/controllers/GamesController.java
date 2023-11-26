@@ -27,7 +27,7 @@ public class GamesController {
         if(suggestContent.length()<3)
             return ResponseEntity.ok(new ArrayList<>());
         List<Game> games = gameRepository.findAllByNameContains(suggestContent);
-        List<SuggestionDTO> suggestionDTOS =games.stream().map(game -> new SuggestionDTO(game.getId(), game.getName())).toList();
+        List<SuggestionDTO> suggestionDTOS =games.stream().map(game -> new SuggestionDTO(game.getId(), game.getName(), game.getIcon2())).toList();
         return  ResponseEntity.ok(suggestionDTOS);
     }
     @GetMapping("/search/byid/{id}")

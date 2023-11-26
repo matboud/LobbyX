@@ -9,9 +9,9 @@ spring:
     show-sql: 'false'
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    username: ${DB_USERNAME}
+    username: sim
     url: jdbc:mariadb://212.227.11.173:3306/lobbyx
-    password: ${DB_PASSWORD}
+    password: Snack123@
 server:
   port: 9080
 

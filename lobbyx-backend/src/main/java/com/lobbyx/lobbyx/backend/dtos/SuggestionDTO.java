@@ -11,4 +11,5 @@ import java.io.Serializable;
 public class SuggestionDTO implements Serializable {
     Integer id;
     String name;
+    String icon2;
 }
