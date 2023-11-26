@@ -1,5 +1,6 @@
 package com.lobbyx.lobbyx.backend.controllers;
 
+import com.lobbyx.lobbyx.backend.dtos.GameDto;
 import com.lobbyx.lobbyx.backend.dtos.SuggestionDTO;
 import com.lobbyx.lobbyx.backend.entities.Game;
 import com.lobbyx.lobbyx.backend.repositories.GameRepository;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api")
@@ -27,5 +29,36 @@ public class GamesController {
         List<SuggestionDTO> suggestionDTOS =games.stream().map(game -> new SuggestionDTO(game.getId(), game.getName())).toList();
         return  ResponseEntity.ok(suggestionDTOS);
     }
-
+    @GetMapping("/search/byid/{id}")
+    public ResponseEntity<GameDto> searchById(@PathVariable Integer id){
+        Optional<Game> gameOptional = gameRepository.findById(id);
+        if(gameOptional.isEmpty())
+            return (ResponseEntity<GameDto>) ResponseEntity.status(404);
+        Game game = gameOptional.get();
+        GameDto gameDto = new GameDto(
+                game.getId(),
+                game.getServerGameId(),
+                game.getExtearnalGameId(),
+                game.getFrontGameId(),
+                game.getName(),
+                game.getTitle(),
+                game.getRatio(),
+                game.getStatus(),
+                game.getProvider(),
+                game.getShowAsProvider(),
+                game.getProviderTitle(),
+                game.getGameOptions(),
+                game.getBlockedCountries(),
+                game.getHasAgeRestriction(),
+                game.getIcon2(),
+                game.getIcon3(),
+                game.getGameSkinId(),
+                game.getBackground()
+        );
+        return ResponseEntity.ok(gameDto);
+    }
+    @GetMapping("/all/{page}/{size}")
+    ResponseEntity<List<GameDto>> getAll(@PathVariable Integer page, @PathVariable Integer size){
+        return null;
+    }
 }
