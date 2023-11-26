@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    open-in-view: 'false'
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: 'false'
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: ${DB_USERNAME}
+    url: jdbc:mariadb://212.227.11.173:3306/lobbyx
+    password: ${DB_PASSWORD}
+server:
+  port: 9080
+
+
