@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 @Getter
 @Setter
 @Entity
@@ -64,5 +67,8 @@ public class Game {
 
     @Column(name = "background", length = 1024)
     private String background;
+
+    @OneToMany(mappedBy = "game", fetch = FetchType.EAGER)
+    private Set<GamesMetadata> gamesMetadata = new LinkedHashSet<>();
 
 }

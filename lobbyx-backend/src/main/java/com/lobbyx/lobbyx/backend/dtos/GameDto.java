@@ -3,6 +3,7 @@ package com.lobbyx.lobbyx.backend.dtos;
 import lombok.Value;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * DTO for {@link com.lobbyx.lobbyx.backend.entities.Game}
@@ -27,4 +28,5 @@ public class GameDto implements Serializable {
     String icon3;
     String gameSkinId;
     String background;
+    List<Integer> metadataIds;
 }

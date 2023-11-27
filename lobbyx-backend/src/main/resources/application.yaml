@@ -14,5 +14,9 @@ spring:
     password: Snack123@
 server:
   port: 9080
-
+logging:
+  level:
+    root: "warn"
+    org.springframework.web: "debug"
+    org.hibernate: "error"
 

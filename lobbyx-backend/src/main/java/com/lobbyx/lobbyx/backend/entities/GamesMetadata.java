@@ -14,8 +14,14 @@ public class GamesMetadata {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "game_id", nullable = false)
+    @Column(name = "metadata_id", nullable = false, insertable = false, updatable = false)
+    private Integer metadataId;
+
+    @Column(name = "game_id", nullable = false, insertable = false, updatable = false)
+    private Integer gameId;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "game_id")
     private Game game;
 
 }
