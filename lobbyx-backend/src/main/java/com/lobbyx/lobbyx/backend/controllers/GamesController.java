@@ -19,11 +19,11 @@ import java.util.Set;
 @RestController
 @RequestMapping("api")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class GamesController {
     private final GameRepository gameRepository;
     //private final MetadataRepository metadataRepository;
     private final GamesMetadataRepository gamesMetadataRepository;
-
     @GetMapping("/suggestion/{suggestContent}")
     public ResponseEntity<List<SuggestionDTO>> suggest(@PathVariable String suggestContent) {
         if (suggestContent.length() < 3)
