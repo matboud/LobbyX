@@ -44,7 +44,7 @@ public class GamesController {
     }
 
     @GetMapping("/filter/{page}/{size}")
-    public ResponseEntity<List<GameDto>> searchById(
+    public ResponseEntity<List<GameDto>> filter(
             @RequestParam("metadata-ids") List<Integer> metadataIds,
             @PathVariable Integer page,
             @PathVariable Integer size) {
@@ -63,6 +63,10 @@ public class GamesController {
         return ResponseEntity.ok(gameDtos);
     }
 
+    @GetMapping("/top5")
+    ResponseEntity<List<GameDto>> getTop5() {
+        return ResponseEntity.ok(gameRepository.findAllByOrderByLikesCountDesc(PageRequest.of(0, 5)).stream().map(this::gameToGameDTO).toList());
+    }
     GameDto gameToGameDTO(Game game) {
         return new GameDto(
                 game.getId(),
@@ -83,6 +87,7 @@ public class GamesController {
                 game.getIcon3(),
                 game.getGameSkinId(),
                 game.getBackground(),
+                game.getLikesCount(),
                 game.getGamesMetadata().stream().map(GamesMetadata::getMetadataId).toList()
         );
     }

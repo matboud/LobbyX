@@ -68,7 +68,12 @@ public class Game {
     @Column(name = "background", length = 1024)
     private String background;
 
+
+
     @OneToMany(mappedBy = "game", fetch = FetchType.EAGER)
     private Set<GamesMetadata> gamesMetadata = new LinkedHashSet<>();
+
+    @Column(name = "likes_count", nullable = false)
+    private Integer likesCount;
 
 }

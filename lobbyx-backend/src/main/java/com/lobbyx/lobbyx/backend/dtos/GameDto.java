@@ -28,5 +28,6 @@ public class GameDto implements Serializable {
     String icon3;
     String gameSkinId;
     String background;
+    Integer likesCount;
     List<Integer> metadataIds;
 }
