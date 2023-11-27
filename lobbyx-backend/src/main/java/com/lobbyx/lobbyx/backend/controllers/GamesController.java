@@ -67,6 +67,19 @@ public class GamesController {
     ResponseEntity<List<GameDto>> getTop5() {
         return ResponseEntity.ok(gameRepository.findAllByOrderByLikesCountDesc(PageRequest.of(0, 5)).stream().map(this::gameToGameDTO).toList());
     }
+
+    @PutMapping("/like/{gameId}")
+    ResponseEntity<Integer> like(
+            @PathVariable Integer gameId
+    ){
+        Optional<Game> gameOptional = gameRepository.findById(gameId);
+        if(gameOptional.isEmpty())
+            return ResponseEntity.notFound().build();
+        Game game = gameOptional.get();
+        game.setLikesCount(game.getLikesCount()+1);
+        Game savedGame = gameRepository.save(game);
+        return ResponseEntity.ok(savedGame.getLikesCount());
+    }
     GameDto gameToGameDTO(Game game) {
         return new GameDto(
                 game.getId(),

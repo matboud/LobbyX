@@ -10,6 +10,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.http.HttpMethod.GET;
+import static org.springframework.http.HttpMethod.PUT;
 
 @Configuration
 @EnableMethodSecurity
@@ -21,9 +22,10 @@ public class SecurityConfig {
 
         return http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth ->
-                        auth.requestMatchers(GET, "api/**").permitAll()
-                )
+                .authorizeHttpRequests(auth -> {
+                    auth.requestMatchers(GET, "api/**").permitAll();
+                    auth.requestMatchers(PUT, "api/**").permitAll();
+                })
                 .sessionManagement(session ->
                         session
                                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
