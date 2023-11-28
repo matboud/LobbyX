@@ -33,7 +33,7 @@ public class GamesController {
             Set<GamesMetadata> gamesMetadata = game.getGamesMetadata();
             gamesMetadata.forEach(gamesMetadata1 -> System.out.println(gamesMetadata1.getMetadataId()));
         });
-        List<SuggestionDTO> suggestionDTOS = games.stream().map(game -> new SuggestionDTO(game.getId(), game.getName(), game.getIcon2())).toList();
+        List<SuggestionDTO> suggestionDTOS = games.stream().map(game -> new SuggestionDTO(game.getId(), game.getName(), game.getIcon2(), game.getBackground(), game.getLikesCount(), game.getProviderTitle()  )).toList();
         return ResponseEntity.ok(suggestionDTOS);
     }
 

@@ -12,4 +12,7 @@ public class SuggestionDTO implements Serializable {
     Integer id;
     String name;
     String icon2;
+    String background;
+    Integer likesCount;
+    String providerTitle;
 }
