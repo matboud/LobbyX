@@ -13,7 +13,7 @@ const ContainerFluid: React.FC<ContainerFluidProps> = ({
   return (
     <div
       className={classNames(
-        "md:px-10 flex h-20 max-w-[90rem] items-center justify-between px-4 sm:px-8",
+        "max-w-[90rem]",
         className
       )}
     >
