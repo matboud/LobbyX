@@ -29,7 +29,6 @@ export default function RootLayout({
         <body className={classNames(inter.className, "h-screen w-full")}>
           <Header />
           <div className="pt-[130px] h-full">{children}</div>
-          {/* TODO: footer */}
           
         </body>
       </html>

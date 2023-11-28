@@ -18,7 +18,6 @@ const GamesGallery: React.FC<GamesGalleryProps> = ({
   handleModal,
 }) => {
   return (
-    // TODO:checkout why the width grows slowly
     <div className="w-full ">
       {/* most popular games based on like count added to the API */}
 
@@ -36,7 +35,7 @@ const GamesGallery: React.FC<GamesGalleryProps> = ({
                 isLiked={false}
                 gameName={item.name}
                 image={item.icon2 || item.icon1}
-                className=" w-full max-w-[49%] sm:max-w-[49%] max-h-44"
+                className="w-full max-w-[48%] sm:max-w-[49%] max-h-44"
                 onClick={() => handleModal(item, true)}
                 {...item}
               />
@@ -55,7 +54,7 @@ const GamesGallery: React.FC<GamesGalleryProps> = ({
               isLiked={false}
               gameName={item.name}
               image={item.icon2 || item.icon1}
-              className=" w-full max-w-[49%] sm:max-w-[32%]"
+              className=" w-full max-w-[48%] sm:max-w-[32%]"
               onClick={() => handleModal(item, true)}
             />
           );

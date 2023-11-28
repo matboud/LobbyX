@@ -8,12 +8,10 @@ type NativeModalProps = {
   handleModal: (game: Game | null, isOpen: boolean) => void;
 };
 
-// TODO: remove code from one place
-
 const NativeModal: React.FC<NativeModalProps> = ({ gameData, handleModal }) => {
   return (
     <div className="bg-gray-900/90 z-[1000] flex justify-center items-center w-screen h-screen top-0 px-8 fixed left-0 right-0 bottom-0 ">
-      <div className="relative w-full max-w-3xl min-h-[70%] bg-black rounded-lg ">
+      <div className="relative w-full max-w-3xl min-h-[70%] bg-black rounded-lg">
         <div
           onClick={() => handleModal(null, false)}
           className=" absolute -top-8 right-0 cursor-pointer"
