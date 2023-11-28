@@ -8,27 +8,29 @@ type NativeModalProps = {
   handleModal: (game: Game | null, isOpen: boolean) => void;
 };
 
+// TODO: remove code from one place
+
 const NativeModal: React.FC<NativeModalProps> = ({ gameData, handleModal }) => {
   return (
     <div className="bg-gray-900/90 z-[1000] flex justify-center items-center w-screen h-screen top-0 px-8 fixed left-0 right-0 bottom-0 ">
-      <div className="relative w-full max-w-3xl min-h-[70%] bg-black rounded-lg">
+      <div className="relative w-full max-w-3xl min-h-[70%] bg-black rounded-lg ">
         <div
           onClick={() => handleModal(null, false)}
           className=" absolute -top-8 right-0 cursor-pointer"
         >
           <XMarkIcon className="w-8 h-8 text-white" />
         </div>
-        <div className="absolute inline-block  w-full h-full">
+        <div className="relative w-full inline-block">
           {/* TODO: add default image if !background */}
           <Image
             src={gameData?.background || ""}
             alt="banner"
             srText="banner"
             className="block w-full opacity-40"
-            width={100}
-            height={100}
+            width={240}
+            height={180}
           />
-          <div className="absolute bottom-0 left-0 w-full h-[80%] bg-fade-bottom" />
+          <div className="absolute bottom-0 left-0 w-full h-1/2 bg-fade-bottom" />
         </div>
 
         <div className="absolute w-full h-full top-0 flex items-center justify-center">
@@ -48,7 +50,7 @@ const NativeModal: React.FC<NativeModalProps> = ({ gameData, handleModal }) => {
                 <h3 className="text-lg font-semibold leading-7 text-white">
                   {gameData?.name.toUpperCase()}
                 </h3>
-                <p className="mt-1 text-sm leading-6 text-gray-500">
+                <p className="mt-1 text-sm leading-6 text-lime-400">
                   Random description / instruction could go here.
                 </p>
               </div>
