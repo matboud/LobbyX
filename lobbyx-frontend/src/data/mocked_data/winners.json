@@ -1,0 +1,44 @@
+[
+  {
+    "id": "0",
+    "name": "Emerson02",
+    "image": "/profile_random.avif",
+    "win": 2003,
+    "game": "Blackjack"
+  },
+  {
+    "id": "1",
+    "name": "Jemma123",
+    "image": "/profile_f.avif",
+    "win": 2003,
+    "game": "Roulette"
+  },
+  {
+    "id": "2",
+    "name": "Josh",
+    "image": "/profile_random.avif",
+    "win": 2004,
+    "game": "Poker"
+  },
+  {
+    "id": "3",
+    "name": "Jane",
+    "image": "/profile_f.avif",
+    "win": 2004,
+    "game": "Slots"
+  },
+  {
+    "id": "4",
+    "name": "AlexSmith",
+    "image": "/profile_random.avif",
+    "win": 2005,
+    "game": "Baccarat"
+  },
+  {
+    "id": "5",
+    "name": "EmilyJohnson",
+    "image": "/profile_f.avif",
+    "win": 2005,
+    "game": "Craps"
+  }
+]

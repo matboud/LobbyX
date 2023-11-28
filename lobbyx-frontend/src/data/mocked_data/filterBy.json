@@ -1,0 +1,68 @@
+{
+    "categories": [
+        {
+            "id": "51",
+            "title": "Video Slots",
+            "type": "category"
+        },
+        {
+            "id": "93",
+            "title": "Top Slots",
+            "type": "category"
+        },
+        {
+            "id": "40",
+            "title": "Video Poker",
+            "type": "category"
+        },
+        {
+            "id": "95",
+            "title": "Popular Games",
+            "type": "category"
+        }
+    ],
+    "features": [
+        {
+            "id": "189",
+            "title": "FREE SPINS",
+            "type": "feature"
+        },
+        {
+            "id": "192",
+            "title": "MULTIPLIER SYMBOLS",
+            "type": "feature"
+        },
+        {
+            "id": "186",
+            "title": "BONUS GAMES",
+            "type": "feature"
+        },
+        {
+            "id": "193",
+            "title": "SCATTER SYMBOLS",
+            "type": "feature"
+        }
+    ],
+    "themes": [
+        {
+            "id": "150",
+            "title": "ADVENTURES AND EXPLORERS",
+            "type": "theme"
+        },
+        {
+            "id": "154",
+            "title": "WINTER SLOTS",
+            "type": "theme"
+        },
+        {
+            "id": "149",
+            "title": "ANIMAL SLOTS",
+            "type": "theme"
+        },
+        {
+            "id": "182",
+            "title": "MONEY AND WEALTH",
+            "type": "theme"
+        }
+    ]
+}
