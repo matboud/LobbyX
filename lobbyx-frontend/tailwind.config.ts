@@ -12,6 +12,8 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "fade-bottom":
+          "linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))",
       },
       colors: {
         neon_cyan: "#56F1FF",

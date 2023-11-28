@@ -26,3 +26,6 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.infinite-scroll-component__outerdiv {
+  width: 100% !important;
+}
