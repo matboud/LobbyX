@@ -62,20 +62,21 @@ const FiltersContainer: React.FC<FilterProps> = ({ filters }) => {
         </section>
       ))}
       <div className="sticky bottom-0 w-full pt-4">
-        <Button
-          srText="Apply Filter"
-          className="bg-lime-400 w-full py-4 text-black"
-          onClick={handleFilterClick}
-        >
-          Apply Filters
-        </Button>
-        {isFilterActive && (
+        {isFilterActive ? (
           <Button
             srText="Clear Filter"
             className="bg-red-400 w-full py-4 text-black mt-2"
             onClick={handleClearFilter}
           >
             Clear Filters
+          </Button>
+        ) : (
+          <Button
+            srText="Apply Filter"
+            className="bg-lime-400 w-full py-4 text-black"
+            onClick={handleFilterClick}
+          >
+            Apply Filters
           </Button>
         )}
       </div>

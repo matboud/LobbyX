@@ -26,9 +26,9 @@ const NativeModal: React.FC<NativeModalProps> = ({ gameData, handleModal }) => {
             srText="banner"
             className="block w-full opacity-40"
             width={100}
-            height={60}
+            height={100}
           />
-          <div className="absolute bottom-0 left-0 w-full h-1/2 bg-fade-bottom" />
+          <div className="absolute bottom-0 left-0 w-full h-[80%] bg-fade-bottom" />
         </div>
 
         <div className="absolute w-full h-full top-0 flex items-center justify-center">

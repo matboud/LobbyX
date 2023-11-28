@@ -43,8 +43,8 @@ const GameCard: React.FC<CardProps> = ({
         src={image}
         alt={gameName}
         srText={`Image of ${gameName}`}
-        width={80}
-        height={60}
+        width={160}
+        height={130}
         className={classNames("w-full object-cover", imageClassName)}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-black/30 flex flex-col justify-between px-3 py-2">
