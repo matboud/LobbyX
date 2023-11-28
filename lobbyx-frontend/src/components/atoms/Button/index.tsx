@@ -1,16 +1,27 @@
+/**
+ * This function calculates the sum of two numbers.
+ * @param {number} a - The first number.
+ * @param {number} b - The second number.
+ * @returns {number} The sum of the two numbers.
+ */
+function calculateSum(a: number, b: number): number {
+  return a + b;
+}
 import React, { ReactNode, ButtonHTMLAttributes } from "react";
 import classNames from "classnames";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children?: ReactNode; // Content: text | icon | image.
+  children?: ReactNode;
   customStyles?: string;
-  srText: string; // Text for the sr-only span
+  srText: string; // sr-only span
+  onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
   children,
   customStyles,
   srText,
+  onClick,
   ...rest
 }) => {
   const defaultStyles =
@@ -20,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
   const buttonStyles = classNames(defaultStyles, customStyles);
 
   return (
-    <button type="button" className={buttonStyles} {...rest}>
+    <button type="button" className={buttonStyles} onClick={onClick} {...rest}>
       {srText && <span className="sr-only">{srText}</span>}
       {children}
     </button>
