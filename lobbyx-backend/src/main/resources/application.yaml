@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    open-in-view: 'false'
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: 'false'
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: sim
+    url: jdbc:mariadb://212.227.11.173:3306/lobbyx
+    password: Snack123@
+server:
+  port: 9080
+logging:
+  level:
+    root: "warn"
+    org.springframework.web: "debug"
+    org.hibernate: "error"
+

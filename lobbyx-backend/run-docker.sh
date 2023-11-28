@@ -1,0 +1,1 @@
+docker run -d -p 9080:9080 --name lobbyx lobbyx

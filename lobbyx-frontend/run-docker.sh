@@ -1,0 +1,1 @@
+docker run --name lobbyx-frontend lobbyx-frontend
