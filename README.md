@@ -15,6 +15,9 @@ Scalable and well-structured codebase.
 Docker containerization for easy deployment.
 Performance Metrics
 Lighthouse Scores: 99% Performance, 100% SEO, 95% Best Practices, 93% Accessibility.
+<img width="520" alt="Screenshot 2023-11-28 at 20 39 47" src="https://github.com/matboud/LobbyX/assets/24990394/716c0c8e-5e4e-4bcd-8d54-b9e1b9670b80">
+
+
 
 ### Prerequisites
 #### Docker
