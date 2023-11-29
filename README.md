@@ -27,7 +27,6 @@ Frontend
 To run the frontend part of the application in a Docker container, execute the following commands in your terminal:
 
 bash
-Copy code
 ./build-docker.sh
 ./run-docker.sh
 
@@ -35,7 +34,6 @@ Backend
 Similarly, to set up and run the backend:
 
 bash
-Copy code
 ./build-docker.sh
 ./run-docker.sh
 
