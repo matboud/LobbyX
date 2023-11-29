@@ -1,17 +1,20 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import { Button } from "@/components/atoms";
 
 type FilterProps = {
   active?: boolean;
   text: string;
   onToggle?: (isActive: boolean) => void;
+  disabled?: boolean;
 };
 
 const ToggleFilter: React.FC<FilterProps> = ({
   active = false,
   text,
   onToggle,
+  disabled,
 }) => {
   const [isActive, setIsActive] = useState(active);
 
@@ -27,26 +30,49 @@ const ToggleFilter: React.FC<FilterProps> = ({
     }
   };
 
+  const ButtonStyle = `
+  bg-gradient-to-t 
+  w-full 
+  ${isActive ? "from-cyan-800/20" : "from-gray-900"}
+  ${disabled ? "cursor-not-allowed" : "cursor-pointer"}
+  to-gray-950 
+  flex 
+  items-center 
+  px-4 
+  py-2 
+  mb-6 
+  rounded-md 
+  duration-300
+`;
+
   return (
-    <div
-      className={`bg-gradient-to-t  ${
-        isActive ? "from-cyan-800/20" : "from-gray-900"
-      } to-gray-950 flex items-center px-4 py-2 mb-6 rounded-md cursor-pointer duration-300`}
+    <Button
+      className={ButtonStyle}
       onClick={handleClick}
+      disabled={disabled}
+      srText="Toggle Filter"
     >
       <CheckCircleIcon
         className={`w-5 h-5 duration-300 ${
-          isActive ? "text-lime-400" : "text-gray-600"
+          isActive
+            ? disabled
+              ? "text-lime-400/60"
+              : "text-lime-400"
+            : "text-gray-600"
         } mr-4`}
       />
       <div
         className={`${
-          isActive ? "text-lime-200" : "text-gray-600"
+          isActive
+            ? disabled
+              ? "text-lime-400/60"
+              : "text-lime-400"
+            : "text-gray-600"
         } duration-300`}
       >
         {text}
       </div>
-    </div>
+    </Button>
   );
 };
 
