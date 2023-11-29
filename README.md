@@ -26,17 +26,36 @@ Installation and Running the Project
 Frontend
 To run the frontend part of the application in a Docker container, execute the following commands in your terminal:
 
-bash
+- 🏗️ build the project:
+```bash
 ./build-docker.sh
 ./run-docker.sh
+```
+
+- 🏃 run th project:
+```bash
+ docker run -d -p 3000:3000 lobbyx-frontend:latest
+
+# logs could be found by:
+ docker logs <container_id>
+```
 
 Backend
 Similarly, to set up and run the backend:
 
-bash
+- 🏗️ build the project:
+```bash
 ./build-docker.sh
 ./run-docker.sh
+```
 
+- 🏃 run th project:
+```bash:
+ docker run -d -p 9080:9080 lobbyx:latest
+
+# logs could be found by:
+ docker logs <container_id>
+```
 
 API Endpoints
 The back end provides several API endpoints for interacting with the games database. For details on available endpoints and their usage, please refer to the API documentation section.
