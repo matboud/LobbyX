@@ -43,9 +43,10 @@ Copy code
 API Endpoints
 The back end provides several API endpoints for interacting with the games database. For details on available endpoints and their usage, please refer to the API documentation section.
 
-Contributing
-Contributions to improve LobbyX are welcome. Please feel free to fork the repository and submit pull requests.
 
+## PS:
+- I haven't included environment variables for the backend or frontend in the project, even though they should be there. This is because I hosted the database on a VPS, and I didn't have enough time to configure it for proper communication.
+-------------
 
 Contact
 For any further queries or suggestions, please contact <contact@matboud.com>.
