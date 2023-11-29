@@ -1,12 +1,11 @@
 "use client";
 import React, { useState, useCallback } from "react";
-import { Button } from "@/components/atoms";
+import { Button, Spinner } from "@/components/atoms";
 import { ToggleFilter } from "@/components/molecules";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchFilteredData } from "@/redux/reducers/filterSlice";
 import { resetFilter } from "@/redux/reducers/filterSlice";
-
-import type { AppDispatch } from "@/redux/store/store";
+import type { AppDispatch, RootState } from "@/redux/store/store";
 
 interface FilterProps {
   filters: Record<string, { id: string; title: string }[]>;
@@ -44,6 +43,8 @@ const FiltersContainer: React.FC<FilterProps> = ({ filters }) => {
     dispatch(resetFilter());
   }, [dispatch]);
 
+  const filterLoading = useSelector((state: RootState) => state.filter.loading);
+
   return (
     <div className="px-4 relative h-auto max-h-[calc(100vh-10rem)] overflow-auto bg-gray-900/40 pt-5 rounded-lg">
       {Object.entries(filters).map(([filterType, filterItems]) => (
@@ -57,6 +58,7 @@ const FiltersContainer: React.FC<FilterProps> = ({ filters }) => {
               text={item.title}
               active={!!activeFilters[item.id]}
               onToggle={(isActive) => handleToggle(item.id, isActive)}
+              disabled={isFilterActive}
             />
           ))}
         </section>
@@ -65,10 +67,13 @@ const FiltersContainer: React.FC<FilterProps> = ({ filters }) => {
         {isFilterActive ? (
           <Button
             srText="Clear Filter"
-            className="bg-red-400 w-full py-4 text-black mt-2"
+            className={`${
+              filterLoading ? "bg-red-300" : "bg-red-400"
+            } w-full h-[56px] text-black mt-2`}
             onClick={handleClearFilter}
+            disabled={filterLoading}
           >
-            Clear Filters
+            {filterLoading ? <Spinner /> : "Clear Filters"}
           </Button>
         ) : (
           <Button
