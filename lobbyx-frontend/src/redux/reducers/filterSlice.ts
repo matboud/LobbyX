@@ -1,4 +1,3 @@
-// In your Redux store folder, create a file named filterSlice.ts
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 interface FilterState {

@@ -146,9 +146,6 @@ export default function Home() {
           </aside>
         </div>
       </ContainerFluid>
-      {isModalOpen && (
-        <NativeModal gameData={selectedGame} handleModal={handleModal} />
-      )}
 
       <SideBars>
         <FiltersContainer filters={FiltersData} />
@@ -181,6 +178,10 @@ export default function Home() {
           </div>
         </Suspense>
       </WinnersSidebar>
+
+      {isModalOpen && (
+        <NativeModal gameData={selectedGame} handleModal={handleModal} />
+      )}
     </main>
   );
 }

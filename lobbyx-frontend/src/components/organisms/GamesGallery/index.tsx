@@ -1,5 +1,4 @@
 import { GameCard, Spinner } from "@/components/atoms";
-import { HandThumbUpIcon } from "@heroicons/react/24/solid";
 
 interface GamesGalleryProps {
   items?: string[];

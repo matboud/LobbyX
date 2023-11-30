@@ -5,6 +5,7 @@ import classNames from "classnames";
 interface LogoProps {
   showShadow?: boolean;
   className?: string;
+  id?: string;
 }
 
 const Logo: React.FC<LogoProps> = ({ showShadow = true, className }) => {
@@ -25,7 +26,7 @@ const Logo: React.FC<LogoProps> = ({ showShadow = true, className }) => {
         height="40"
         alt="LobbyX logo"
         srText="LobbyX logo"
-        className=""
+        
       />
     </div>
   );
