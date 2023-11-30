@@ -1,12 +1,3 @@
-/**
- * This function calculates the sum of two numbers.
- * @param {number} a - The first number.
- * @param {number} b - The second number.
- * @returns {number} The sum of the two numbers.
- */
-function calculateSum(a: number, b: number): number {
-  return a + b;
-}
 import React, { ReactNode, ButtonHTMLAttributes } from "react";
 import classNames from "classnames";
 

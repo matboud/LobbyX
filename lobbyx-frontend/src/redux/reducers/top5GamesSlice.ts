@@ -19,7 +19,6 @@ const top5GamesSlice = createSlice({
   name: "top5Games",
   initialState,
   reducers: {
-    // Your synchronous reducers here
   },
   extraReducers: (builder) => {
     builder

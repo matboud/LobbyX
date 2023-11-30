@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page renders correctly 1`] = `
+<div>
+  <div
+    class="w-full flex justify-center items-center"
+  >
+    Error: 
+    fetch is not defined
+  </div>
+</div>
+`;
